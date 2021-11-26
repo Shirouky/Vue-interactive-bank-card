@@ -12,24 +12,24 @@
 
         <!-- Здесь будет выводиться ЛОГОТИП БАНКА -->
         <div class="bank">
-            <img v-bind:src="bank">
+            <img :src="bank">
         </div>
 
         <!-- Поле для ввода НОМЕРА КАРТЫ -->
         <div class="number-container">
-            <input v-bind:class="stats" type="text" placeholder="Номер карты" v-model="number">
-            <div v-bind:class="stat"></div>
+            <input :class="stats" type="text" placeholder="Номер карты" v-model="number">
+            <div :class="stat"></div>
         </div>
 
         <!-- Поле для ввода ИМЕНИ ДЕРЖАТЕЛЯ -->
         <div class="name-container">
-            <input v-bind:class="statst" type="text" placeholder="Имя держателя" v-model="name">
-            <div v-bind:class="statt"></div>
+            <input :class="statst" type="text" placeholder="Имя держателя" v-model="name">
+            <div :class="statt"></div>
         </div>
 
         <!-- Логотип ПЛАТЕЖНОЙ СИСТЕМЫ -->
         <div class="pay-system">
-            <img v-bind:src="system">
+            <img :src="system">
         </div>
 
     </div>
@@ -42,31 +42,39 @@
             }),
             computed: {
                 system(){
-                    if (this.number[0] == String(2)){
-                        return "img/systems/mir.png";
-                    } else if (this.number[0] == String(3)){
-                        return "img/systems/american-exp.png";
-                    }  else if (this.number[0] == String(4)){
-                        return "img/systems/visa.png";
-                    }  else if (this.number[0] == String(5)){
-                        return "img/systems/mastercard.png";
-                    }  else if (this.number[0] == String(6)){
-                        return "img/systems/maestro.png";
-                    } else {
-                        return "";
+                    const num = this.number[0];
+                    switch (num){
+                        case 2:
+                            return "img/systems/mir.png";
+                            break;
+                        case 3:
+                            return "img/systems/american-exp.png";
+                            break;
+                        case 4:
+                            return "img/systems/visa.png";
+                            break;
+                        case 5:
+                            return "img/systems/mastercard.png";
+                            break;
+                        case 6:
+                            return "img/systems/maestro.png";
+                            break;
+                        default:
+                            return "";
+                            break;
                     }
                 },
                 bank(){
                     const alpha = [521178, 548673, 548601, 415428, 676371, 477964, 479004]
-                    let vtb = [427229, 527883, 447520]
-                    let gazprom = [548999, 526483]
-                    let mts_bank = [533736, 540616]
-                    let otkrytie = [434146, 405870, 544573, 532301]
-                    let rosbank = [440503, 554761]
-                    let rus_standart = [513691, 510047]
-                    let raifaz = [462730, 462729]
-                    let sber = [427683, 427901, 427644, 427601, 427901, 427631, 427638, 546938]
-                    let tincoff = [521324, 437773]
+                    const vtb = [427229, 527883, 447520]
+                    const gazprom = [548999, 526483]
+                    const mts_bank = [533736, 540616]
+                    const otkrytie = [434146, 405870, 544573, 532301]
+                    const rosbank = [440503, 554761]
+                    const rus_standart = [513691, 510047]
+                    const raifaz = [462730, 462729]
+                    const sber = [427683, 427901, 427644, 427601, 427901, 427631, 427638, 546938]
+                    const tincoff = [521324, 437773]
 
                     if (this.number.length < 6) return "img/banks/logo.png"
 
