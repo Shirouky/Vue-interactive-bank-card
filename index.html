@@ -67,36 +67,36 @@
                 bank(){
                     const alpha = [521178, 548673, 548601, 415428, 676371, 477964, 479004]
                     const vtb = [427229, 527883, 447520]
-                    const gazprom = [548999, 526483]
+                    const gazprombank = [548999, 526483]
                     const mts_bank = [533736, 540616]
                     const otkrytie = [434146, 405870, 544573, 532301]
                     const rosbank = [440503, 554761]
-                    const rus_standart = [513691, 510047]
-                    const raifaz = [462730, 462729]
-                    const sber = [427683, 427901, 427644, 427601, 427901, 427631, 427638, 546938]
-                    const tincoff = [521324, 437773]
+                    const russian_standart = [513691, 510047]
+                    const raiffaizen = [462730, 462729]
+                    const sberbank = [427683, 427901, 427644, 427601, 427901, 427631, 427638, 546938]
+                    const tinkoff = [521324, 437773]
 
                     if (this.number.length < 6) return "img/banks/logo.png"
                     const substr = this.number.substring(0, 6)
 
-                    for (let i = 0; i < sber.length; i++){
+                    for (let i = 0; i < sberbank.length; i++){
                         if (alpha.length > i && String(alpha[i]) == substr){
                             return "img/banks/alpha.png"
-                        } else if (gazprom.length > i && String(gazprom[i]) == substr){
+                        } else if (gazprombank.length > i && String(gazprombank[i]) == substr){
                             return "img/banks/gazprombank.png"
                         } else if (mts_bank.length > i && String(mts_bank[i]) == substr){
                             return "img/banks/mts-bank.png"
                         } else if (otkrytie.length > i && String(otkrytie[i]) == substr){
                             return "img/banks/otkrytie.png"
-                        } else if (raifaz.length > i && String(raifaz[i]) == substr){
+                        } else if (raiffaizen.length > i && String(raiffaizen[i]) == substr){
                             return "img/banks/raiffaizen.png"
                         } else if (rosbank.length > i && String(rosbank[i]) == substr){
                             return "img/banks/rosbank.png"
-                        } else if (rus_standart.length > i && String(rus_standart[i]) == substr){
+                        } else if (russian_standart.length > i && String(russian_standart[i]) == substr){
                             return "img/banks/russian_standart.png"
-                        } else if (sber.length > i && String(sber[i]) == substr){
+                        } else if (sberbank.length > i && String(sberbank[i]) == substr){
                             return "img/banks/sberbank.png"
-                        } else if (tincoff.length > i && String(tincoff[i]) == substr){
+                        } else if (tinkoff.length > i && String(tinkoff[i]) == substr){
                             return "img/banks/tinkoff.png"
                         } else if (vtb.length > i && String(vtb[i]) == substr){
                             return "img/banks/vtb.png"
