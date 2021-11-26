@@ -44,19 +44,19 @@
                 system(){
                     const num = this.number[0];
                     switch (num){
-                        case 2:
+                        case "2":
                             return "img/systems/mir.png";
                             break;
-                        case 3:
+                        case "3":
                             return "img/systems/american-exp.png";
                             break;
-                        case 4:
+                        case "4":
                             return "img/systems/visa.png";
                             break;
-                        case 5:
+                        case "5":
                             return "img/systems/mastercard.png";
                             break;
-                        case 6:
+                        case "6":
                             return "img/systems/maestro.png";
                             break;
                         default:
@@ -77,56 +77,30 @@
                     const tincoff = [521324, 437773]
 
                     if (this.number.length < 6) return "img/banks/logo.png"
+                    const substr = this.number.substring(0, 6)
 
-                    for (var i = 0; i < alpha.length; i++){
-                        if (String(alpha[i]) == this.number.substring(0, 6)){
+                    for (let i = 0; i < sber.length; i++){
+                        if (alpha.length > i && String(alpha[i]) == substr){
                             return "img/banks/alpha.png"
-                        }
-                    }
-                    for (var i = 0; i < gazprom.length; i++){
-                        if (String(gazprom[i]) == this.number.substring(0, 6)){
+                        } else if (gazprom.length > i && String(gazprom[i]) == substr){
                             return "img/banks/gazprombank.png"
-                        }
-                    }
-                    for (var i = 0; i < mts_bank.length; i++){
-                        if (String(mts_bank[i]) == this.number.substring(0, 6)){
+                        } else if (mts_bank.length > i && String(mts_bank[i]) == substr){
                             return "img/banks/mts-bank.png"
-                        }
-                    }
-                    for (var i = 0; i < otkrytie.length; i++){
-                        if (String(otkrytie[i]) == this.number.substring(0, 6)){
+                        } else if (otkrytie.length > i && String(otkrytie[i]) == substr){
                             return "img/banks/otkrytie.png"
-                        }
-                    }
-                    for (var i = 0; i < raifaz.length; i++){
-                        if (String(raifaz[i]) == this.number.substring(0, 6)){
+                        } else if (raifaz.length > i && String(raifaz[i]) == substr){
                             return "img/banks/raiffaizen.png"
-                        }
-                    }
-                    for (var i = 0; i < rosbank.length; i++){
-                        if (String(rosbank[i]) == this.number.substring(0, 6)){
+                        } else if (rosbank.length > i && String(rosbank[i]) == substr){
                             return "img/banks/rosbank.png"
-                        }
-                    }
-                    for (var i = 0; i < rus_standart.length; i++){
-                        if (String(rus_standart[i]) == this.number.substring(0, 6)){
+                        } else if (rus_standart.length > i && String(rus_standart[i]) == substr){
                             return "img/banks/russian_standart.png"
-                        }
-                    }
-                    for (var i = 0; i < sber.length; i++){
-                        if (String(sber[i]) == this.number.substring(0, 6)){
+                        } else if (sber.length > i && String(sber[i]) == substr){
                             return "img/banks/sberbank.png"
-                        }
-                    }
-                    for (var i = 0; i < tincoff.length; i++){
-                        if (String(tincoff[i]) == this.number.substring(0, 6)){
+                        } else if (tincoff.length > i && String(tincoff[i]) == substr){
                             return "img/banks/tinkoff.png"
-                        }
-                    }
-                    for (var i = 0; i < vtb.length; i++){
-                        if (String(vtb[i]) == this.number.substring(0, 6)){
+                        } else if (vtb.length > i && String(vtb[i]) == substr){
                             return "img/banks/vtb.png"
-                        }
+                        } 
                     }
                     return "img/banks/logo.png"
                 },
